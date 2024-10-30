@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - "book/**"
+      - ".github/workflows/publish-book.yml"
     branches:
       - main
 
