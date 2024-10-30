@@ -22,7 +22,7 @@ jobs:
           node-version: "18.19.1"
 
       - name: Install dependencies
-        run: npm ci
+        run: cd site && npm ci
 
       - name: Build site
         run: cd site && npm run build -- --base=/the-testing-book/
