@@ -1,0 +1,10 @@
+default:
+    @just --list
+
+# Build the project
+build:
+    npm run build
+
+# Clean the project
+clean:
+    rm -rf dist

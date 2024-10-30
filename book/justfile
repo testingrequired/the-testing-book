@@ -1,0 +1,10 @@
+default:
+    @just --list
+
+# Build the project
+build:
+    mdbook build
+
+# Clean the project
+clean:
+    mdbook clean
