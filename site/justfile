@@ -3,8 +3,7 @@ default:
 
 # Build the project
 build:
-    npm run build
+    npm run build -- --base=/dist/
 
-# Clean the project
 clean:
     rm -rf dist
