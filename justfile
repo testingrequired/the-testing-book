@@ -14,3 +14,7 @@ clean:
     cd book && just clean
     cd site && just clean
     rm -rf docs
+
+watch:
+    cd book && just watch
+    cd site && just watch

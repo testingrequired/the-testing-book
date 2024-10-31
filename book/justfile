@@ -8,3 +8,6 @@ build:
 # Clean the project
 clean:
     mdbook clean
+
+watch:
+    mdbook serve --open
