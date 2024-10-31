@@ -8,7 +8,7 @@ function App() {
         <small>A Software Engineering Guide To Testing</small>
       </h1>
       <p>
-        Read it <a href="book">online</a>!
+        Read it <a href="book">online</a>.
       </p>
     </>
   );
