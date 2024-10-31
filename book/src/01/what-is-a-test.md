@@ -1,10 +1,20 @@
 # What Is A Test?
 
-A test is the codifying of a defined scenario (given, when) and an expected behavior (then), based on our current understanding of the system.
+The term "test" has a lot of different meanings depending on the context and the person. To some it's an individual test case being exercised by a person but to others it's some kind of automated test. There are even those that take issue calling anything automated a test but rather a "check". Even within automated testing there are several different types and forms of tests like unit, integration, end to end, smoke, regression and even performance tests.
 
+## In This Book
+
+For the purposes of talking about tests as a general concept we'll use this more abstract defition of what a test is:
+
+> A test is the codifying of a defined scenario (setup, actions) + an expected behavior (assertions)
+>
 > **Given** _this condition_  
 > **When** _this action occurs_  
-> **Then** _this expected state is present_
+> **Then** _this state is expected_
+>
+> A test captures our current understanding of the system.
+
+Let's break that down.
 
 ## Setup/Given
 
