@@ -37,7 +37,7 @@ jobs:
         run: cd site && npm ci
 
       - name: Build site
-        run: ./scripts/build-site.sh -- --base=/the-testing-book/
+        run: ./scripts/build-site.sh --base=/the-testing-book/
 
       - name: Build book
         run: ./scripts/build-book.sh
