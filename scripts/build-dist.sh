@@ -1,14 +1,22 @@
 #!/usr/bin/env bash
 
-mkdir -p dist
-cp -a site/dist/. dist
-mkdir -p dist/book
-cp -a book/book/. dist/book
+# Copy the site's build
+mkdir -p dist/html
+cp -a site/dist/. dist/html
 
-ls -a dist
+# Copy the book's html build
+mkdir -p dist/html/book
+cp -a book/book/html/. dist/html/book
+
+# Copy the book's epub build
+mkdir -p dist/epub
+cp -a book/book/epub/. dist/epub
+
+# List out directories/files created
+ls -a dist/html
 
 echo "ASSETS"
-ls -a dist/assets
+ls -a dist/html/assets
 
 echo "BOOK"
-ls -a dist/book
+ls -a dist/html/book
