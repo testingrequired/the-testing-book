@@ -1,19 +1,14 @@
 default:
     @just --list
 
-# Build the project
-build:
-    cd book && just build
-    cd site && just build
-    mkdir -p dist
-    cp -a site/dist/. dist
-    mkdir -p dist/book
-    cp -a book/book/. dist/book
+# Build the site and book
+build *args='':
+    ./scripts/build.sh {{args}}
 
 clean:
     cd book && just clean
     cd site && just clean
-    rm -rf docs
+    rm -rf dist
 
 watch:
     cd book && just watch

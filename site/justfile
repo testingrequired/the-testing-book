@@ -2,8 +2,8 @@ default:
     @just --list
 
 # Build the project
-build:
-    npm run build -- --base=/dist/
+build *args='--base=/dist/':
+    npm run build -- {{args}}
 
 clean:
     rm -rf dist

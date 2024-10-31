@@ -32,17 +32,13 @@ jobs:
         run: cd site && npm ci
 
       - name: Build site
-        run: cd site && npm run build -- --base=/the-testing-book/
+        run: ./scripts/build-site.sh -- --base=/the-testing-book/
 
       - name: Build book
-        run: cd book && mdbook build
+        run: ./scripts/build-book.sh
 
-      - name: Copy to dist folder
-        run: |
-          mkdir -p dist
-          cp -a site/dist/. dist
-          mkdir -p dist/book
-          cp -a book/book/. dist/book
+      - name: Build the dist folder
+        run: ./scripts/build-dist.sh
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
