@@ -13,3 +13,6 @@ clean:
 watch:
     cd book && just watch
     cd site && just watch
+
+test:
+    cd e2e && just test
