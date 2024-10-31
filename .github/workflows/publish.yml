@@ -73,7 +73,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: the-testing-book-html
-          path: dist/html
+          path: dist/html/book
 
       - name: Upload epub
         uses: actions/upload-artifact@v4
