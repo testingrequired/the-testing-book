@@ -37,14 +37,8 @@ jobs:
       - name: Install site dependencies
         run: cd site && npm ci
 
-      - name: Build site
-        run: ./scripts/build-site.sh --base=/the-testing-book/
-
-      - name: Build book
-        run: ./scripts/build-book.sh
-
-      - name: Build the dist folder
-        run: ./scripts/build-dist.sh
+      - name: Build
+        run: ./scripts/build.sh --base=/the-testing-book/
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
