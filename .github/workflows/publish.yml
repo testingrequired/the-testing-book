@@ -58,9 +58,9 @@ jobs:
         with:
           node-version-file: "./site/.nvmrc"
       - name: Install dependencies
-        run: cd site && npm ci
+        run: cd e2e && npm ci
       - name: Install Playwright Browsers
-        run: cd site && npx playwright install --with-deps
+        run: cd e2e && npx playwright install --with-deps
       - name: Run Playwright tests
         run: cd e2e && npm test
       - uses: actions/upload-artifact@v4
