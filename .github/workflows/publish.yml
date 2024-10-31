@@ -6,7 +6,8 @@ on:
   push:
     paths:
       - "site/**"
-      - ".github/workflows/publish-site.yml"
+      - "book/**"
+      - ".github/workflows/publish.yml"
     branches:
       - main
 
@@ -18,20 +19,34 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Setup mdbook binary
+        uses: peaceiris/actions-mdbook@v2
+        with:
+          mdbook-version: "latest"
+
       - uses: actions/setup-node@v4
         with:
           node-version: "18.19.1"
 
-      - name: Install dependencies
+      - name: Install site dependencies
         run: cd site && npm ci
 
       - name: Build site
         run: cd site && npm run build -- --base=/the-testing-book/
 
-      - name: Deploy site to gh-pages
+      - name: Build book
+        run: cd book && mdbook build
+
+      - name: Copy to dist folder
+        run: |
+          mkdir -p dist
+          cp -a site/dist/. dist
+          mkdir -p dist/book
+          cp -a book/book/. dist/book
+
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           destination_dir: ./
-          publish_dir: ./site/dist
+          publish_dir: ./dist
