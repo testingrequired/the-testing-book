@@ -34,7 +34,9 @@ jobs:
           mdbook-version: "latest"
 
       - name: Install mdbook plugins
-        run: cargo install mdbook-embedify
+        run: |
+          cargo install mdbook-embedify
+          cargo install mdbook-epub
 
       - uses: actions/setup-node@v4
         with:
