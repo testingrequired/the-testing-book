@@ -4,3 +4,7 @@ language = "en"
 multilingual = false
 src = "src"
 title = "The Testing Book"
+
+[preprocessor.embedify]
+footer.enable = true
+footer.message = "WIP • Copyright © 2024 [Kylee Tilley](https://github.com/testingrequired)"
