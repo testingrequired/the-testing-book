@@ -19,6 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install just
+        uses: taiki-e/install-action@v2
+        with:
+          tool: just
+
       - name: Setup mdbook binary
         uses: peaceiris/actions-mdbook@v2
         with:
