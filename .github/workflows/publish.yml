@@ -31,7 +31,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "18.19.1"
+          node-version-file: "./site/.nvmrc"
 
       - name: Install site dependencies
         run: cd site && npm ci
