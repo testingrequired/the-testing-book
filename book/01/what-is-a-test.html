@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Chapter 1 - The Testing Book</title>
+        <title>What Is A Test? - The Testing Book</title>
 
 
         <!-- Custom HTML head -->
@@ -12,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,7 +35,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html" class="active"><strong aria-hidden="true">1.</strong> Chapter 1</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01/what-is-a-test.html" class="active"><strong aria-hidden="true">1.1.</strong> What Is A Test?</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -144,7 +144,7 @@
                     <h1 class="menu-title">The Testing Book</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -173,12 +173,93 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
+                        <h1 id="what-is-a-test"><a class="header" href="#what-is-a-test">What Is A Test?</a></h1>
+<p>A test is the codifying of a defined scenario (given, when) and an expected behavior (then), based on our current understanding of the system.</p>
+<blockquote>
+<p><strong>Given</strong> <em>this condition</em><br />
+<strong>When</strong> <em>this action occurs</em><br />
+<strong>Then</strong> <em>this expected state is present</em></p>
+</blockquote>
+<h2 id="setupgiven"><a class="header" href="#setupgiven">Setup/Given</a></h2>
+<p>This is where you define what the state of the system looks like before any actions are performed.</p>
+<ul>
+<li>Is the user logged in?</li>
+<li>Is the user banned?</li>
+<li>Does user have permission to view post?</li>
+</ul>
+<p>Each test has a limited budget for number of system state variables that are "in budget". Variables come at a cost of complexity when trying to fill out test coverage but we'll cover this later.</p>
+<h2 id="actionswhen"><a class="header" href="#actionswhen">Actions/When</a></h2>
+<p>This is where you define what actions are performed during the test.</p>
+<ul>
+<li>User creates a new post</li>
+<li>User likes a post</li>
+<li>PostService creates new post</li>
+<li>Query the post table for posts by user</li>
+</ul>
+<h2 id="assertionsthen"><a class="header" href="#assertionsthen">Assertions/Then</a></h2>
+<p>Examine the resulting system state. Does it match our expectations?</p>
+<ul>
+<li>User is redirected to newly created post</li>
+<li>Post like count is incremented</li>
+<li>User's posts query includes newly created post</li>
+<li>Returns all of user's posts</li>
+</ul>
+<h2 id="some-examples"><a class="header" href="#some-examples">Some Examples</a></h2>
+<blockquote>
+<p><strong>Given</strong> the user is logged in<br />
+<strong>When</strong> the user goes to login page<br />
+<strong>Then</strong> the user is redirected to home page</p>
+</blockquote>
+<blockquote>
+<p><strong>Given</strong> the user is not logged in<br />
+<strong>When</strong> the user goes to login page<br />
+<strong>Then</strong> the user remains on the login page</p>
+</blockquote>
+<blockquote>
+<p><strong>Given</strong> the user is logged in<br />
+<strong>And</strong> the user goes to the home page<br />
+<strong>When</strong> the page loads<br />
+<strong>Then</strong> the user's feed is populated</p>
+</blockquote>
+<blockquote>
+<p><strong>Given</strong> the user is logged in<br />
+<strong>And</strong> the user goes to the home page<br />
+<strong>When</strong> the page loads<br />
+<strong>Then</strong> the default feed is populated</p>
+</blockquote>
+<h2 id="code-examples"><a class="header" href="#code-examples">Code Examples</a></h2>
+<p>This applies to tests in code as well. I'll often put comments to organize a code test.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn div (a: usize, b: usize) -&gt; usize {
+    a / b
+}
+
+// Given
+let a = 10;
+let b = 2;
+
+// When
+let result = div(a, b);
+
+// Then
+assert_eq!(5, result);
+<span class="boring">}</span></code></pre></pre>
+<h2 id="for-best-results"><a class="header" href="#for-best-results">For Best Results</a></h2>
+<p>These aren't rules but you should fully understand why a test isn't doing these things:</p>
+<ul>
+<li>Setup should come before actions</li>
+<li>Actions should come before assertions</li>
+<li>Tests can have multiple assertions but they should all be asserting different aspects of the same expected behavior.</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../01/introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
 
                         <div style="clear: both"></div>
@@ -187,6 +268,9 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../01/introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
             </nav>
 
@@ -200,13 +284,13 @@
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 
