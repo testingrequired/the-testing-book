@@ -8,7 +8,11 @@ function App() {
         <small>A Software Engineering Guide To Testing</small>
       </h1>
       <p>
-        Read it <a href="book">online</a>!
+        Read it <a href="book">online</a> or download the{" "}
+        <a href="https://github.com/testingrequired/the-testing-book/actions/workflows/publish.yml#partial-actions-workflow-runs">
+          latest
+        </a>{" "}
+        html or epub version.
       </p>
     </>
   );
