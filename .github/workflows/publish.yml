@@ -46,6 +46,7 @@ jobs:
             target/
 
       - name: Install mdbook plugins
+        if: always() && steps.cache-cargo-restore.outputs.cache-hit != 'true'
         run: |
           cargo install mdbook-embedify
           cargo install mdbook-epub
