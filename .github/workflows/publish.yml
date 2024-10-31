@@ -62,7 +62,7 @@ jobs:
       - name: Install Playwright Browsers
         run: cd site && npx playwright install --with-deps
       - name: Run Playwright tests
-        run: cd site && npm test
+        run: cd e2e && npm test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
