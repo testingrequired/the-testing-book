@@ -1,6 +1,7 @@
 name: Publish
 
-permissions: write-all
+permissions:
+  pages: write
 
 on:
   push:
