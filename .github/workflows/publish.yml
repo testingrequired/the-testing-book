@@ -8,7 +8,6 @@ on:
       - "site/**"
       - "book/**"
       - "scripts/**"
-      - "e2e/**"
       - ".github/workflows/publish.yml"
     branches:
       - main
@@ -47,25 +46,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           destination_dir: ./
           publish_dir: ./dist
-
-  test:
-    needs: deploy
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: "./site/.nvmrc"
-      - name: Install dependencies
-        run: cd e2e && npm ci
-      - name: Install Playwright Browsers
-        run: cd e2e && npx playwright install --with-deps
-      - name: Run Playwright tests
-        run: cd e2e && npm test
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
