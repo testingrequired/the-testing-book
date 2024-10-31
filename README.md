@@ -2,7 +2,7 @@
 
 A Software Engineering Guide To Testing
 
-Download the [latest](https://github.com/testingrequired/the-testing-book/actions/workflows/publish.yml#partial-actions-workflow-runs) html or epub or read it online here: https://testingrequired.github.io/the-testing-book/
+Read it [online](https://testingrequired.github.io/the-testing-book/) or download the latest [html/epub versions](https://github.com/testingrequired/the-testing-book/actions/workflows/publish.yml#partial-actions-workflow-runs).
 
 ---
 
