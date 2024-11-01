@@ -263,6 +263,18 @@ let result = div(a, b);
 // Then
 assert_eq!(5, result);
 <span class="boring">}</span></code></pre></pre>
+<p>Here is an example from this book's own E2E test:</p>
+<pre><code class="language-typescript">// Given
+await page.goto("https://testingrequired.github.io/the-testing-book/");
+
+// When
+await page.getByText("online").click();
+
+// Then
+await expect(page.url()).toBe(
+  "https://testingrequired.github.io/the-testing-book/book/"
+);
+</code></pre>
 <div style="page-break-before:always">&nbsp;</div>
 <style>
   .scroll-to-top {
