@@ -10,9 +10,8 @@ function App() {
       <p>
         Read it <a href="book">online</a> or download the{" "}
         <a href="https://github.com/testingrequired/the-testing-book/actions/workflows/publish.yml#partial-actions-workflow-runs">
-          latest
-        </a>{" "}
-        html or epub version.
+          latest html or epub version
+        </a>
       </p>
     </>
   );
