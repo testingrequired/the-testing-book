@@ -177,6 +177,47 @@
                         <h1 id="before-we-get-started"><a class="header" href="#before-we-get-started">Before We Get Started</a></h1>
 <p>Testing is a big topic. A really big topic that means so many different things to different people. I hope by defining and referencing some vocabulary the book uses it helps everyone have a common understand of the concepts being outlined.</p>
 <style>
+  .scroll-to-top {
+    font-size: 2.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding: 0.75rem;
+    bottom: 4rem;
+    right: calc(1.25rem + 90px + var(--page-padding));
+    z-index: 999;
+    cursor: pointer;
+    border: none;
+    color: var(--bg);
+    background: var(--fg);
+    border-radius: 50%;
+  }
+  .scroll-to-top.hidden {
+    display: none;
+  }
+  .scroll-to-top i {
+    transform: translateY(-2px);
+  }
+  @media (min-width: 1080px) {
+    .scroll-to-top {
+      display: flex;
+    }
+  }
+</style>
+<button type="button" aria-label="scroll-to-top" class="scroll-to-top hidden" onclick="scrollToTop()">
+  <i class="fa fa-angle-up"></i>
+</button>
+<script>
+  const scrollToTop = () => window.scroll({ top: 0, behavior: "smooth" });
+  window.addEventListener("scroll", () => {
+    const button = document.querySelector(".scroll-to-top");
+    button.classList.toggle("hidden", window.scrollY < 200);
+  });
+</script>
+<style>
   footer {
     text-align: center;
     text-wrap: balance;
@@ -194,6 +235,47 @@
 </footer>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="who-is-the-target-audience-for-this-book"><a class="header" href="#who-is-the-target-audience-for-this-book">Who Is The Target Audience For This Book?</a></h1>
 <p>Anyone involved in the development and delivery of software.</p>
+<style>
+  .scroll-to-top {
+    font-size: 2.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding: 0.75rem;
+    bottom: 4rem;
+    right: calc(1.25rem + 90px + var(--page-padding));
+    z-index: 999;
+    cursor: pointer;
+    border: none;
+    color: var(--bg);
+    background: var(--fg);
+    border-radius: 50%;
+  }
+  .scroll-to-top.hidden {
+    display: none;
+  }
+  .scroll-to-top i {
+    transform: translateY(-2px);
+  }
+  @media (min-width: 1080px) {
+    .scroll-to-top {
+      display: flex;
+    }
+  }
+</style>
+<button type="button" aria-label="scroll-to-top" class="scroll-to-top hidden" onclick="scrollToTop()">
+  <i class="fa fa-angle-up"></i>
+</button>
+<script>
+  const scrollToTop = () => window.scroll({ top: 0, behavior: "smooth" });
+  window.addEventListener("scroll", () => {
+    const button = document.querySelector(".scroll-to-top");
+    button.classList.toggle("hidden", window.scrollY < 200);
+  });
+</script>
 <style>
   footer {
     text-align: center;
@@ -294,6 +376,47 @@ assert_eq!(5, result);
 <li>Actions should come before assertions</li>
 <li>Tests can have multiple assertions but they should all be asserting different aspects of the same expected behavior.</li>
 </ul>
+<style>
+  .scroll-to-top {
+    font-size: 2.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding: 0.75rem;
+    bottom: 4rem;
+    right: calc(1.25rem + 90px + var(--page-padding));
+    z-index: 999;
+    cursor: pointer;
+    border: none;
+    color: var(--bg);
+    background: var(--fg);
+    border-radius: 50%;
+  }
+  .scroll-to-top.hidden {
+    display: none;
+  }
+  .scroll-to-top i {
+    transform: translateY(-2px);
+  }
+  @media (min-width: 1080px) {
+    .scroll-to-top {
+      display: flex;
+    }
+  }
+</style>
+<button type="button" aria-label="scroll-to-top" class="scroll-to-top hidden" onclick="scrollToTop()">
+  <i class="fa fa-angle-up"></i>
+</button>
+<script>
+  const scrollToTop = () => window.scroll({ top: 0, behavior: "smooth" });
+  window.addEventListener("scroll", () => {
+    const button = document.querySelector(".scroll-to-top");
+    button.classList.toggle("hidden", window.scrollY < 200);
+  });
+</script>
 <style>
   footer {
     text-align: center;
