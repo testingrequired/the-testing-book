@@ -185,6 +185,7 @@
 <p>A test captures our current understanding of the system.</p>
 </blockquote>
 <p>Let's break that down.</p>
+<div style="page-break-before:always">&nbsp;</div>
 <h2 id="setupgiven"><a class="header" href="#setupgiven">Setup/Given</a></h2>
 <p>This is where you define what the state of the system looks like before any actions are performed.</p>
 <ul>
@@ -193,6 +194,7 @@
 <li>Does user have permission to view post?</li>
 </ul>
 <p>Each test has a limited budget for number of system state variables that are "in budget". Variables come at a cost of complexity when trying to fill out test coverage but we'll cover this later.</p>
+<div style="page-break-before:always">&nbsp;</div>
 <h2 id="actionswhen"><a class="header" href="#actionswhen">Actions/When</a></h2>
 <p>This is where you define what actions are performed during the test.</p>
 <ul>
@@ -201,6 +203,7 @@
 <li>PostService creates new post</li>
 <li>Query the post table for posts by user</li>
 </ul>
+<div style="page-break-before:always">&nbsp;</div>
 <h2 id="assertionsthen"><a class="header" href="#assertionsthen">Assertions/Then</a></h2>
 <p>Examine the resulting system state. Does it match our expectations?</p>
 <ul>
@@ -209,6 +212,7 @@
 <li>User's posts query includes newly created post</li>
 <li>Returns all of user's posts</li>
 </ul>
+<div style="page-break-before:always">&nbsp;</div>
 <h2 id="some-examples"><a class="header" href="#some-examples">Some Examples</a></h2>
 <blockquote>
 <p><strong>Given</strong> the user is logged in<br />
@@ -232,6 +236,7 @@
 <strong>When</strong> the page loads<br />
 <strong>Then</strong> the default feed is populated</p>
 </blockquote>
+<div style="page-break-before:always">&nbsp;</div>
 <h2 id="code-examples"><a class="header" href="#code-examples">Code Examples</a></h2>
 <p>This applies to tests in code as well. I'll often put comments to organize a code test.</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
@@ -250,6 +255,7 @@ let result = div(a, b);
 // Then
 assert_eq!(5, result);
 <span class="boring">}</span></code></pre></pre>
+<div style="page-break-before:always">&nbsp;</div>
 <h2 id="for-best-results"><a class="header" href="#for-best-results">For Best Results</a></h2>
 <p>These aren't rules but you should fully understand why a test isn't doing these things:</p>
 <ul>
