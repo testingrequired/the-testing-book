@@ -45,7 +45,7 @@ jobs:
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
-            target/
+            ./mdbook-pagebreaks/target/
 
       - name: Install mdbook plugins
         if: always() && steps.cache-cargo-restore.outputs.cache-hit != 'true'
@@ -61,7 +61,7 @@ jobs:
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
-            target/
+            ./mdbook-pagebreaks/target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('./scripts/install-mdbook-plugins.sh', './mdbook-pagebreaks/**/*.*') }}
 
       - uses: actions/setup-node@v4
