@@ -4,7 +4,6 @@ default:
 install:
     cd book && just install
     cd site && just install
-    cd e2e && just install
 
 # Build the site and book
 build *args='':
