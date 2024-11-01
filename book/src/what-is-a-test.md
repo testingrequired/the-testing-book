@@ -52,6 +52,16 @@ Examine the resulting system state. Does it match our expectations?
 
 {{---}}
 
+## For Best Results
+
+These aren't rules but you should fully understand why a test isn't doing these things:
+
+- Setup before actions
+- Actions before assertions
+- Assertions compose to assert a single expectation
+
+{{---}}
+
 ## Some Examples
 
 > **Given** the user is logged in  
@@ -93,15 +103,5 @@ let result = div(a, b);
 // Then
 assert_eq!(5, result);
 ```
-
-{{---}}
-
-## For Best Results
-
-These aren't rules but you should fully understand why a test isn't doing these things:
-
-- Setup should come before actions
-- Actions should come before assertions
-- Tests can have multiple assertions but they should all be asserting different aspects of the same expected behavior.
 
 {{---}}
