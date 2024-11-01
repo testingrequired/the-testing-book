@@ -330,6 +330,14 @@
 <li>Returns all of user's posts</li>
 </ul>
 <div style="page-break-before:always">&nbsp;</div>
+<h2 id="for-best-results"><a class="header" href="#for-best-results">For Best Results</a></h2>
+<p>These aren't rules but you should fully understand why a test isn't doing these things:</p>
+<ul>
+<li>Setup before actions</li>
+<li>Actions before assertions</li>
+<li>Assertions compose to assert a single expectation</li>
+</ul>
+<div style="page-break-before:always">&nbsp;</div>
 <h2 id="some-examples"><a class="header" href="#some-examples">Some Examples</a></h2>
 <blockquote>
 <p><strong>Given</strong> the user is logged in<br />
@@ -372,14 +380,6 @@ let result = div(a, b);
 // Then
 assert_eq!(5, result);
 <span class="boring">}</span></code></pre></pre>
-<div style="page-break-before:always">&nbsp;</div>
-<h2 id="for-best-results"><a class="header" href="#for-best-results">For Best Results</a></h2>
-<p>These aren't rules but you should fully understand why a test isn't doing these things:</p>
-<ul>
-<li>Setup should come before actions</li>
-<li>Actions should come before assertions</li>
-<li>Tests can have multiple assertions but they should all be asserting different aspects of the same expected behavior.</li>
-</ul>
 <div style="page-break-before:always">&nbsp;</div>
 <style>
   .scroll-to-top {
