@@ -104,4 +104,19 @@ let result = div(a, b);
 assert_eq!(5, result);
 ```
 
+Here is an example from this book's own E2E test:
+
+```typescript
+// Given
+await page.goto("https://testingrequired.github.io/the-testing-book/");
+
+// When
+await page.getByText("online").click();
+
+// Then
+await expect(page.url()).toBe(
+  "https://testingrequired.github.io/the-testing-book/book/"
+);
+```
+
 {{---}}
