@@ -77,6 +77,8 @@ jobs:
 
       - name: Build
         run: ./scripts/build.sh --base=/the-testing-book/
+        env:
+          MDBOOK_output__html__site_url: "/book/"
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
