@@ -1,6 +1,11 @@
 default:
     @just --list
 
+install:
+    cd book && just install
+    cd site && just install
+    cd e2e && just install
+
 # Build the site and book
 build *args='':
     ./scripts/build.sh {{args}}

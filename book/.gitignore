@@ -1,2 +1,3 @@
 # Output directory for mdbook
 book
+node_modules

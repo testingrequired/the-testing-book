@@ -10,8 +10,10 @@ footer.enable = true
 footer.message = "WIP • Copyright © 2024 [Kylee Tilley](https://github.com/testingrequired)"
 scroll-to-top.enable = true
 
+[preprocessor.mermaid]
 [preprocessor.pagebreaks]
 
 [output.html]
+additional-js = ["node_modules/mermaid/dist/mermaid.min.js", "mermaid-init.js"]
 
 [output.epub]

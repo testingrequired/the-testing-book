@@ -3,3 +3,7 @@ default:
 
 test:
     npm test
+
+install:
+    npm ci
+    npx playwright install --with-deps

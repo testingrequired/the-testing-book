@@ -25,6 +25,10 @@ jobs:
       - name: Setup rust
         uses: dtolnay/rust-toolchain@stable
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: "./site/.nvmrc"
+
       - name: Install just
         uses: taiki-e/install-action@v2
         with:
@@ -47,9 +51,9 @@ jobs:
             ~/.cargo/git/db/
             ./mdbook-pagebreaks/target/
 
-      - name: Install mdbook plugins
+      - name: Install depdendencies
         if: always() && steps.cache-cargo-restore.outputs.cache-hit != 'true'
-        run: ./scripts/install-mdbook-plugins.sh
+        run: just install
 
       - name: Save cargo cache
         id: cache-cargo-save
@@ -63,13 +67,6 @@ jobs:
             ~/.cargo/git/db/
             ./mdbook-pagebreaks/target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('./scripts/install-mdbook-plugins.sh', './mdbook-pagebreaks/**/*.*') }}
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: "./site/.nvmrc"
-
-      - name: Install site dependencies
-        run: cd site && npm ci
 
       - name: Build
         run: ./scripts/build.sh --base=/the-testing-book/

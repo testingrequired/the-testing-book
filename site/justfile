@@ -10,3 +10,6 @@ clean:
 
 watch:
     echo "No watch script"
+
+install:
+    npm ci

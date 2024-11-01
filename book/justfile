@@ -1,6 +1,10 @@
 default:
     @just --list
 
+install:
+    npm ci
+    cd .. && ./scripts/install-mdbook-plugins.sh
+
 # Build the project
 build:
     mdbook build
