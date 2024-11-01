@@ -16,7 +16,7 @@ For the purposes of talking about tests as a general concept we'll use this more
 
 Let's break that down.
 
-<div style="page-break-before:always">&nbsp;</div>
+{{---}}
 
 ## Setup/Given
 
@@ -28,7 +28,7 @@ This is where you define what the state of the system looks like before any acti
 
 Each test has a limited budget for number of system state variables that are "in budget". Variables come at a cost of complexity when trying to fill out test coverage but we'll cover this later.
 
-<div style="page-break-before:always">&nbsp;</div>
+{{---}}
 
 ## Actions/When
 
@@ -39,7 +39,7 @@ This is where you define what actions are performed during the test.
 - PostService creates new post
 - Query the post table for posts by user
 
-<div style="page-break-before:always">&nbsp;</div>
+{{---}}
 
 ## Assertions/Then
 
@@ -50,7 +50,7 @@ Examine the resulting system state. Does it match our expectations?
 - User's posts query includes newly created post
 - Returns all of user's posts
 
-<div style="page-break-before:always">&nbsp;</div>
+{{---}}
 
 ## Some Examples
 
@@ -72,7 +72,7 @@ Examine the resulting system state. Does it match our expectations?
 > **When** the page loads  
 > **Then** the default feed is populated
 
-<div style="page-break-before:always">&nbsp;</div>
+{{---}}
 
 ## Code Examples
 
@@ -94,7 +94,7 @@ let result = div(a, b);
 assert_eq!(5, result);
 ```
 
-<div style="page-break-before:always">&nbsp;</div>
+{{---}}
 
 ## For Best Results
 

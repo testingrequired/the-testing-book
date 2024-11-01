@@ -10,6 +10,8 @@ footer.enable = true
 footer.message = "WIP • Copyright © 2024 [Kylee Tilley](https://github.com/testingrequired)"
 scroll-to-top.enable = true
 
+[preprocessor.pagebreaks]
+
 [output.html]
 
 [output.epub]
