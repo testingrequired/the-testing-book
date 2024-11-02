@@ -40,34 +40,8 @@ jobs:
         with:
           mdbook-version: "latest"
 
-      - name: Restore cargo cache
-        id: cache-cargo-restore
-        uses: actions/cache/restore@v4
-        with:
-          key: ${{ runner.os }}-cargo-${{ hashFiles('./scripts/install-mdbook-plugins.sh') }}
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            ./mdbook-pagebreaks/target/
-
       - name: Install depdendencies
-        if: always() && steps.cache-cargo-restore.outputs.cache-hit != 'true'
         run: just install
-
-      - name: Save cargo cache
-        id: cache-cargo-save
-        uses: "actions/cache/save@v4"
-        if: always() && steps.cache-cargo-restore.outputs.cache-hit != 'true'
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            ./mdbook-pagebreaks/target/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('./scripts/install-mdbook-plugins.sh') }}
 
       - name: Build
         run: ./scripts/build.sh --base=/the-testing-book/
