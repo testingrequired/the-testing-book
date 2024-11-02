@@ -46,6 +46,8 @@ jobs:
         with:
           key: ${{ runner.os }}-cargo-${{ hashFiles('./scripts/install-mdbook-plugins.sh') }}
           path: |
+            ~/.cargo/.crates.toml
+            ~/.cargo/.crates2.json
             ~/.cargo/bin/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
@@ -60,6 +62,8 @@ jobs:
         if: always() && steps.cache-cargo-restore.outputs.cache-hit != 'true'
         with:
           path: |
+            ~/.cargo/.crates.toml
+            ~/.cargo/.crates2.json
             ~/.cargo/bin/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
