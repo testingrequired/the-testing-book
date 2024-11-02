@@ -1,8 +1,7 @@
 use regex::{escape, Regex};
 
 pub const PAGE_BREAK: &'static str = "{{---}}";
-pub const HTML_BREAK: &'static str =
-    "<div style=\"page-break-before:always;display:none;\">&nbsp;</div>";
+pub const HTML_BREAK: &'static str = "<div class=\"mdbook_pagebreak\">&nbsp;</div>";
 
 /// Replace all instances of `{{---}}` with an HTML page break
 pub fn replace_page_breaks(input: &str) -> String {
