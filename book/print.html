@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Home</a></li><li class="chapter-item expanded "><a href="target-audience.html"><strong aria-hidden="true">1.</strong> Target Audience</a></li><li class="chapter-item expanded "><a href="what-is-a-test.html"><strong aria-hidden="true">2.</strong> What Is A Test?</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Home</a></li><li class="chapter-item expanded "><a href="target-audience.html"><strong aria-hidden="true">1.</strong> Target Audience</a></li><li class="chapter-item expanded "><a href="what-is-a-unit.html"><strong aria-hidden="true">2.</strong> What Is A Unit?</a></li><li class="chapter-item expanded "><a href="what-is-a-test.html"><strong aria-hidden="true">3.</strong> What Is A Test?</a></li><li class="chapter-item expanded "><a href="what-is-test-scope.html"><strong aria-hidden="true">4.</strong> What Is Test Scope?</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -290,6 +290,65 @@
 </style>
 <footer><p>WIP • Copyright © 2024 <a href="https://github.com/testingrequired">Kylee Tilley</a></p>
 </footer>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="what-is-a-unit"><a class="header" href="#what-is-a-unit">What Is A Unit?</a></h1>
+<p>In this book the term "unit" will refer to a single coheasive public function/method/object/interface. A class with multiple private methods and a single public method is a single unit. A public function that calls a bunch of private functions are collectively a single unit.</p>
+<style>
+  .scroll-to-top {
+    font-size: 2.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding: 0.75rem;
+    bottom: 4rem;
+    right: calc(1.25rem + 90px + var(--page-padding));
+    z-index: 999;
+    cursor: pointer;
+    border: none;
+    color: var(--bg);
+    background: var(--fg);
+    border-radius: 50%;
+  }
+  .scroll-to-top.hidden {
+    display: none;
+  }
+  .scroll-to-top i {
+    transform: translateY(-2px);
+  }
+  @media (min-width: 1080px) {
+    .scroll-to-top {
+      display: flex;
+    }
+  }
+</style>
+<button type="button" aria-label="scroll-to-top" class="scroll-to-top hidden" onclick="scrollToTop()">
+  <i class="fa fa-angle-up"></i>
+</button>
+<script>
+  const scrollToTop = () => window.scroll({ top: 0, behavior: "smooth" });
+  window.addEventListener("scroll", () => {
+    const button = document.querySelector(".scroll-to-top");
+    button.classList.toggle("hidden", window.scrollY < 200);
+  });
+</script>
+<style>
+  footer {
+    text-align: center;
+    text-wrap: balance;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer p {
+    margin: 0;
+  }
+</style>
+<footer><p>WIP • Copyright © 2024 <a href="https://github.com/testingrequired">Kylee Tilley</a></p>
+</footer>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="what-is-a-test"><a class="header" href="#what-is-a-test">What Is A Test?</a></h1>
 <p>The term "test" has a lot of different meanings depending on the context and the person. To some it's an individual test case being exercised by a person but to others it's some kind of automated test. There are even those that take issue calling anything automated a test but rather a "check". Even within automated testing there are several different types and forms of tests like unit, integration, end to end, smoke, regression and even performance tests.</p>
 <h2 id="in-this-book"><a class="header" href="#in-this-book">In This Book</a></h2>
@@ -329,6 +388,9 @@
 <li>User's posts query includes newly created post</li>
 <li>Returns all of user's posts</li>
 </ul>
+<div style="page-break-before:always">&nbsp;</div>
+<h2 id="unit-under-test-uut"><a class="header" href="#unit-under-test-uut">Unit Under Test (<abbr>UUT</abbr>)</a></h2>
+<p>A test should have only one unit that's under test. This is generally called the "unit under test".</p>
 <div style="page-break-before:always">&nbsp;</div>
 <h2 id="for-best-results"><a class="header" href="#for-best-results">For Best Results</a></h2>
 <p>These aren't rules but you should fully understand why a test isn't doing these things:</p>
@@ -393,6 +455,106 @@ await expect(page.url()).toBe(
 );
 </code></pre>
 <div style="page-break-before:always">&nbsp;</div>
+<style>
+  .scroll-to-top {
+    font-size: 2.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding: 0.75rem;
+    bottom: 4rem;
+    right: calc(1.25rem + 90px + var(--page-padding));
+    z-index: 999;
+    cursor: pointer;
+    border: none;
+    color: var(--bg);
+    background: var(--fg);
+    border-radius: 50%;
+  }
+  .scroll-to-top.hidden {
+    display: none;
+  }
+  .scroll-to-top i {
+    transform: translateY(-2px);
+  }
+  @media (min-width: 1080px) {
+    .scroll-to-top {
+      display: flex;
+    }
+  }
+</style>
+<button type="button" aria-label="scroll-to-top" class="scroll-to-top hidden" onclick="scrollToTop()">
+  <i class="fa fa-angle-up"></i>
+</button>
+<script>
+  const scrollToTop = () => window.scroll({ top: 0, behavior: "smooth" });
+  window.addEventListener("scroll", () => {
+    const button = document.querySelector(".scroll-to-top");
+    button.classList.toggle("hidden", window.scrollY < 200);
+  });
+</script>
+<style>
+  footer {
+    text-align: center;
+    text-wrap: balance;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer p {
+    margin: 0;
+  }
+</style>
+<footer><p>WIP • Copyright © 2024 <a href="https://github.com/testingrequired">Kylee Tilley</a></p>
+</footer>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="what-is-test-scope"><a class="header" href="#what-is-test-scope">What Is Test Scope?</a></h1>
+<p>Now that we've established what a test and unit is, let's talk about test scope. This book defines test scope as what units are included in the test's box and if they are controlled or not.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<h3 id="units"><a class="header" href="#units">Units</a></h3>
+<pre class="mermaid">classDiagram
+    class PostsController{
+        +getById(id) Post
+    }
+
+    class PostsService{
+        +getById(id) Post
+    }
+
+    class PermissionService{
+        +canViewPost(postId, userId) boolean
+    }
+</pre>
+<h3 id="uncontrolled"><a class="header" href="#uncontrolled">Uncontrolled</a></h3>
+<pre class="mermaid">architecture-beta
+    group test(cloud)[Test]
+    group uut(cloud)[UUT] in test
+    group uncontrolled(cloud)[Uncontrolled] in test
+
+    service posts_controller(cloud)[PostsController] in uut
+    service posts_service(cloud)[PostsService] in uncontrolled
+    service permission_service(database)[PermissionService] in uncontrolled
+
+    posts_controller:R -- L:posts_service
+    posts_controller:R -- L:permission_service
+</pre>
+<h3 id="controlled"><a class="header" href="#controlled">Controlled</a></h3>
+<pre class="mermaid">architecture-beta
+    group test(cloud)[Test]
+    group uut(cloud)[UUT] in test
+    group controlled(cloud)[Controlled] in test
+
+    service posts_controller(cloud)[PostsController] in uut
+    service posts_service(cloud)[PostsService] in controlled
+    service permission_service(database)[PermissionService] in controlled
+
+    posts_controller:R -- L:posts_service
+    posts_controller:R -- L:permission_service
+</pre>
 <style>
   .scroll-to-top {
     font-size: 2.5rem;
