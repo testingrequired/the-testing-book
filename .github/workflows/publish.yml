@@ -9,6 +9,7 @@ on:
     paths:
       - "site/**"
       - "book/**"
+      - "mdbook-pagebreaks/**"
       - "scripts/**"
       - ".github/workflows/publish.yml"
     branches:
