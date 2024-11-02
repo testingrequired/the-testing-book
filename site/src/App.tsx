@@ -12,7 +12,7 @@ function App() {
         <a href="https://github.com/testingrequired/the-testing-book/actions/workflows/publish.yml#partial-actions-workflow-runs">
           latest html or epub version
         </a>
-        !
+        .
       </p>
     </>
   );

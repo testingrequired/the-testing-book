@@ -175,7 +175,7 @@ mod linebreaks_lib {
                         {
                             "Chapter": {
                                 "name": "Chapter 1",
-                                "content": "# Chapter 1\n<div style=\"page-break-before:always\">&nbsp;</div>",
+                                "content": "# Chapter 1\n<div style=\"page-break-before:always;display:none;\">&nbsp;</div>",
                                 "number": [1],
                                 "sub_items": [],
                                 "path": "chapter_1.md",
