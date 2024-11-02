@@ -6,3 +6,4 @@
 - [What Is A Unit?](what-is-a-unit.md)
 - [What Is A Test?](what-is-a-test.md)
 - [What Is Test Scope?](what-is-test-scope.md)
+- [What Is Coverage?](what-is-coverage.md)
