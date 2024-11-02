@@ -1,0 +1,13 @@
+default:
+    @just --list
+
+# Build the project
+build:
+    cargo build
+
+# Clean the project
+clean:
+    cargo clean
+
+test:
+    cargo test

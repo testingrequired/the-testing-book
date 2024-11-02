@@ -942,6 +942,7 @@ dependencies = [
  "clap",
  "mdbook",
  "pretty_assertions",
+ "regex",
  "semver",
  "serde_json",
 ]

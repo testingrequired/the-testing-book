@@ -7,6 +7,8 @@ use semver::{Version, VersionReq};
 use std::io;
 use std::process;
 
+mod replacer;
+
 pub fn make_app() -> Command {
     Command::new("linebreaks-preprocessor")
         .about("A mdbook preprocessor which inserts page breaks")
@@ -70,6 +72,7 @@ fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> ! {
 
 mod linebreaks_lib {
     use mdbook::BookItem;
+    use replacer::replace_page_breaks;
 
     use super::*;
 
@@ -91,10 +94,7 @@ mod linebreaks_lib {
 
             book.for_each_mut(|item| {
                 if let BookItem::Chapter(chapter) = item {
-                    chapter.content = chapter.content.replace(
-                        "{{---}}",
-                        "<div style=\"page-break-before:always\">&nbsp;</div>",
-                    );
+                    chapter.content = replace_page_breaks(&chapter.content);
                 }
             });
 
@@ -195,7 +195,7 @@ mod linebreaks_lib {
             assert!(result.is_ok());
 
             let actual_book = result.unwrap();
-            assert_eq!(actual_book, expected_book);
+            assert_eq!(expected_book, actual_book);
         }
     }
 }
