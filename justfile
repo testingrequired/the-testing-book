@@ -12,7 +12,6 @@ build *args='':
 clean:
     cd book && just clean
     cd site && just clean
-    cd mdbook-pagebreaks && just clean
     rm -rf dist
 
 watch:
@@ -20,7 +19,7 @@ watch:
     cd site && just watch
 
 test:
-    cd mdbook-pagebreaks && just test
+    echo "No test script"
 
 verify-local:
     just clean
