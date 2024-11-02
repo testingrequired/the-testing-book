@@ -5,13 +5,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "test-local": "BASE_URL=http://localhost:3000 npx playwright test --trace on",
+    "serve": "npx serve ../dist/html",
+    "serve-and-test-local": "concurrently \"npm run serve\" \"npm run test-local\""
   },
   "keywords": [],
   "author": "Kylee Tilley <kyleetilley@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.48.2",
-    "@types/node": "^22.8.4"
+    "@types/node": "^22.8.4",
+    "concurrently": "^9.0.1",
+    "serve": "^14.2.4"
   }
 }

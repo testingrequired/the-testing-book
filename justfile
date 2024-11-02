@@ -21,3 +21,8 @@ watch:
 
 test:
     cd mdbook-pagebreaks && just test
+
+verify-local:
+    just clean
+    just build --base=/
+    cd e2e && npm run serve-and-test-local

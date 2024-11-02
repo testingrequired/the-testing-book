@@ -2,7 +2,7 @@ default:
     @just --list
 
 # Build the project
-build *args='--base=/dist/':
+build *args='--base=/dist/html/':
     npm run build -- {{args}}
 
 clean:
