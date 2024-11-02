@@ -52,6 +52,12 @@ Examine the resulting system state. Does it match our expectations?
 
 {{---}}
 
+## Unit Under Test (<abbr>UUT</abbr>)
+
+A test should have only one unit that's under test. This is generally called the "unit under test".
+
+{{---}}
+
 ## For Best Results
 
 These aren't rules but you should fully understand why a test isn't doing these things:
