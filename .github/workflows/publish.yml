@@ -28,7 +28,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version-file: "./site/.nvmrc"
+          node-version-file: ".nvmrc"
 
       - name: Install just
         uses: taiki-e/install-action@v2
