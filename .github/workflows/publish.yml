@@ -37,7 +37,7 @@ jobs:
       - name: Setup mdbook binary
         uses: peaceiris/actions-mdbook@v2
         with:
-          mdbook-version: "latest"
+          mdbook-version: "0.4.40"
 
       - name: Restore cargo cache
         id: cache-cargo-restore
