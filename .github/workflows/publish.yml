@@ -11,6 +11,7 @@ on:
       - "book/**"
       - "scripts/**"
       - ".github/workflows/publish.yml"
+      - ".nvmrc"
     branches:
       - main
 
