@@ -1,2 +1,2 @@
 - [Github](https://github.com/testingrequired/the-testing-book)
-- [Download](https://github.com/testingrequired/the-testing-book/actions/workflows/publish.yml#partial-actions-workflow-runs)
+- [Download html/epub versions](https://github.com/testingrequired/the-testing-book/actions/workflows/publish.yml#partial-actions-workflow-runs)
