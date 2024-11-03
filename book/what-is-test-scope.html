@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Home</a></li><li class="chapter-item expanded "><a href="target-audience.html"><strong aria-hidden="true">1.</strong> Target Audience</a></li><li class="chapter-item expanded "><a href="what-is-a-unit.html"><strong aria-hidden="true">2.</strong> What Is A Unit?</a></li><li class="chapter-item expanded "><a href="what-is-a-test.html"><strong aria-hidden="true">3.</strong> What Is A Test?</a></li><li class="chapter-item expanded "><a href="what-is-test-scope.html" class="active"><strong aria-hidden="true">4.</strong> What Is Test Scope?</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Home</a></li><li class="chapter-item expanded "><a href="target-audience.html"><strong aria-hidden="true">1.</strong> Target Audience</a></li><li class="chapter-item expanded "><a href="what-is-a-unit.html"><strong aria-hidden="true">2.</strong> What Is A Unit?</a></li><li class="chapter-item expanded "><a href="what-is-a-test.html"><strong aria-hidden="true">3.</strong> What Is A Test?</a></li><li class="chapter-item expanded "><a href="what-is-test-scope.html" class="active"><strong aria-hidden="true">4.</strong> What Is Test Scope?</a></li><li class="chapter-item expanded "><a href="what-is-coverage.html"><strong aria-hidden="true">5.</strong> What Is Coverage?</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -177,6 +177,8 @@
                     <main>
                         <h1 id="what-is-test-scope"><a class="header" href="#what-is-test-scope">What Is Test Scope?</a></h1>
 <p>Now that we've established what a test and unit is, let's talk about test scope. This book defines test scope as what units are included in the test's box and if they are controlled or not.</p>
+<h2 id="uncontrolledcontrolled-units"><a class="header" href="#uncontrolledcontrolled-units">Uncontrolled/Controlled Units</a></h2>
+<p>A controlled unit is a unit whose implementation is not ran or atleast partially not ran. An uncontrolled unit is a unit whose implementation is fully allowed to run. In other frameworks/libraries this is referred to as stubbing, faking or mocking.</p>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <h3 id="units"><a class="header" href="#units">Units</a></h3>
 <pre class="mermaid">classDiagram
@@ -218,6 +220,11 @@
     posts_controller:R -- L:posts_service
     posts_controller:R -- L:permission_service
 </pre>
+<h2 id="the-cost-of-scope"><a class="header" href="#the-cost-of-scope">The Cost Of Scope</a></h2>
+<ul>
+<li>More scope catches more bugs but makes coverage harder to obtain</li>
+<li>Less scope identifies where the bug is occurring</li>
+</ul>
 <style>
   .scroll-to-top {
     font-size: 2.5rem;
@@ -284,6 +291,9 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next prefetch" href="what-is-coverage.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -295,6 +305,9 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next prefetch" href="what-is-coverage.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
