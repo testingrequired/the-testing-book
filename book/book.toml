@@ -15,6 +15,6 @@ scroll-to-top.enable = true
 
 [output.html]
 additional-js = ["node_modules/mermaid/dist/mermaid.min.js", "mermaid-init.js"]
-additional-css = ["mdbook-pagebreaks.css"]
+additional-css = ["book.css", "mdbook-pagebreaks.css"]
 
 [output.epub]
